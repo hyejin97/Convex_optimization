@@ -11,8 +11,8 @@ On the other hand, in any building it is also important to maintain comfortable 
 This project aims to suggest an algorithm that maintains the appropriate inner building temperatures while minimizing the energy consumption cost for DGIST buildings specifically.
 
 <h4> Method </h4>
-**i. System modeling**
-<br>
+
+**i.System modeling**
 The algorithm outputs optimal inner building temperature for given amount of time at interval of one hour. The inner building temperature at certain time 𝑡 is denoted by 𝑥(𝑡). The deviation of temperature d(𝑡) denotes 𝑥(𝑡) − 𝑥(𝑡 − 1), which needs to be constrained to keep the inner building temperature stable. The decrease of temperature in the building per hour without heating should be also considered, which denoted by constant parameter 𝛽. The cost of energy that is consumed to increase the temperature by 1°C is denoted by parameter Α. The cost per per unit differs depending on the energy demand of each time interval and parameter Α can be expressed by Α = P(t) ∗ 𝑊 , where P(t) means the cost of energy unit and 𝑊 means the amount of energy used to increase the temperature of one hectare of inner building by 1°C. In this research, P(t) refers to the table of energy cost per kWh for educational institutions provided by Korea Electric Power Corporation(KEPO).
 
 ![Alt Text](./fig1.png)
@@ -20,7 +20,7 @@ The algorithm outputs optimal inner building temperature for given amount of tim
 <br> W is calculated by thermal load, 𝐻(𝑘𝑐𝑎𝑙/ h𝑟) = 𝑎(𝑚2) * h(𝑘𝑐𝑎𝑙/ 𝑚2 h𝑟), where 𝑎 is the heating area and h is heat loss constant. Empirical data of building insulation with window ceiling is used for h.
 Using these variables and parameters, the energy cost at time 𝑡 is formulated as 𝐶(𝑡) = (𝑑(𝑡) + 𝛽) * A. The objective function to be minimized is cumulative sum of energy cost per each time 𝑡, which is ∑𝑁𝑡=1 𝐶(𝑡).
 
-**ii. Optimization Problem formulation**
+**ii.Optimization Problem formulation**
 <br>
 From system modeling, the objective function is cumulative sum of energy cost. The optimization problem can be formulated as following.
 
@@ -35,7 +35,7 @@ Therefore, the problem can be re-written as convex optimization problem as the o
 
 
 <br>
-**iii. Code**
+**iii.Code**
 The optimization algorithm is implemented in cvxpy, a python-based convex programming library.
 The code is in 'linear_programming.py'
 <br>
