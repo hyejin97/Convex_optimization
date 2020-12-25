@@ -14,16 +14,20 @@ w = cp.Parameter(nonneg=True, value = 0.77)
 
 for i in range(24):
     if i >= 0 and i < 9:
-        pt[i]= 53.8 * w elif i >= 9 and i < 10:
+        pt[i]= 53.8 * w 
+    elif i >= 9 and i < 10:
         pt[i] = 93.0 * w
     elif i >= 10 and i < 12:
-        pt[i] = 131.7 * w elif i >= 12 and i < 17:
+        pt[i] = 131.7 * w 
+    elif i >= 12 and i < 17:
         pt[i] = 93.0 * w
     elif i >= 17 and i < 20:
-        pt[i] = 131.7 * w elif i >= 20 and i < 22:
+        pt[i] = 131.7 * w 
+    elif i >= 20 and i < 22:
         pt[i] = 93.0 * w
     elif i >= 22 and i < 23:
-        pt[i] = 131.7 * w elif i >= 23 and i < 25:
+        pt[i] = 131.7 * w 
+    elif i >= 23 and i < 25:
         pt[i] = 53.8 * w
 
 objective = (d + dec)*pt
