@@ -23,17 +23,16 @@ Using these variables and parameters, the energy cost at time 𝑡 is formulated
 **ii.Optimization Problem formulation**
 <br>
 From system modeling, the objective function is cumulative sum of energy cost. The optimization problem can be formulated as following.
-
+<br>
 ![Alt Text](./formula1.png)
-
+<br>
 The temperature distribution 𝑥(𝑡) for N hours can be expressed as a vector variable 𝑋 = {𝑥1,𝑥2,...,𝑥𝑁} and similarly, temperature deviation 𝑑(𝑡) is expressed as 𝐷 = {𝑑 ,𝑑 ,...,𝑑 }.The object function is then transformed as the following form.
-
+<br>
 ![Alt Text](./formula2.png)
-
+<br>
 Therefore, the problem can be re-written as convex optimization problem as the objective function is Linear Programming(LP) form and the constraints are convex sets.
+<br>
 ![Alt Text](./formula3.png)
-
-
 <br>
 **iii.Code**
 The optimization algorithm is implemented in cvxpy, a python-based convex programming library.
@@ -43,13 +42,14 @@ The code is in 'linear_programming.py'
 <h4> Result </h4>
 The minimum heating energy cost and optimal distribution of temperature for 24 hours is acquired from the optimization result. Minimum temperature was set to 19 °C, maximum temperature to 25°C, and minimum deviation to 2°C are set as constraints. Figure 2 shows the distribution of temperature when the algorithm is applied. The intervals of 10 – 12, 18 – 21, and 23 – 24 has negative gradients, which means that the heating system does not operate in these intervals.
 
+<br>
 ![Alt Text](./result.png)
 
 <br>
 When the inner building temperature continuously operated the heating system to keep the temperature at 19°C, the cumulative sum of energy cost for 24 hours is 1595.594 won/hr. After applying the optimization algorithm, the cumulative energy cost for 24 hours is 1194.27 won/hr, which reduced the cost about 25%.
-
 <br>
 
 <h4> References </h4>
 [1] Thirteen buildings of the Szaserów Housing Cooperative in Warsaw (2010), more than 40 housing associations from Warsaw and surrounding areas
+<br>
 [2] K. Louadj, “Optimization of Electricity Consumption in a building.”, IEEE, April 2018
